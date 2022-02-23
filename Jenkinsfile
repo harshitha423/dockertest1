@@ -19,13 +19,13 @@ pipeline {
 
          stage('Push Image to Docker Hub') {
            steps {
-             sh 'docker -H tcp://ip-172-31-41-0:2375 run --rm -dit --name webapp1 --hostname webapp1 -p 8000:80 423445/nginx:v1'
+             sh 'docker -H tcp://ip-172-31-41-0:2375 run --rm -dit --name webappp1 --hostname webappp1 -p 6000:80 423445/nginx:v1'
              }
          }
 
          stage('Check Webapp Reachability') {
            steps {
-             sh 'curl http://ec2-35-154-189-184.ap-south-1.compute.amazonaws.com:8000'
+             sh 'curl http://ec2-35-154-189-184.ap-south-1.compute.amazonaws.com:6000'
              }
          }
        
